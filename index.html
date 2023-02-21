@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ICC Arbitration Jin Cheng vs AVZ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background-color: #121317;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .countdown-container-wrapper {
+        text-align: center;
+      }
+      .countdown-container {
+        width: 68vmin;
+        height: 95vmin;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 0;
+        font-size: 16px;
+        border-radius: 0.5em;
+        background-color: #21242b;
+        border-bottom: 10px solid #18f98f;
+      }
+      .countdown-header {
+        color: #18f98f;
+        font-size: 1.2em;
+        text-align: center;
+        padding: 0.5em 0;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+      }
+      i {
+        color: #18f98f;
+        font-size: 2.5em;
+        text-align: center;
+      }
+      .countdown-numbers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .counter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 1em;
+      }
+      .counter .num {
+        color: #ffffff;
+        display: grid;
+        place-items: center;
+        font-weight: 600;
+        font-size: 5em;
+        margin-bottom: -0.1em;
+      }
+      .counter .text {
+        color: #ffffff;
+        font-size: 1em;
+        text-align: center;
+        padding: 1em;
+        font-weight: 400;
+        line-height: 0;        
+      }
+      .countdown-copy {
+  color: #ffffff;
+  font-size: 1em;
+  text-align: center;
+  padding: 0.5em 0;
+  font-weight: 400;
+  text-transform: lowercase;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+      @media screen and (max-width: 1024px) {
+        .countdown-container {
+          width: 26vmin;
+          height: 26vmin;
+          font-size: 12px;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        .countdown-container {
+          width: 60vw;
+          height: 80vh;
+          font-size: 14px;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .countdown-container {
+          width: 100%;
+          height: 100%;
+          font-size: 6vw;
+          border-radius: 0;
+          border: none;
+        }
+        .countdown-container-wrapper {
+          padding: 0.5em;
+        }
+        .countdown-title {
+          margin-top: 0px;
+        }
+      }
+    </style>
+  </head>  
+  <body>
+    <div class="countdown-container-wrapper">
+      <div class="countdown-container">
+  <div class="countdown-header">ZIJIN vs AVZ @ ICC ARBITRATION</div>
+  <div class="countdown-numbers">
+          <div class="counter">
+            <i class="fas fa-calendar-alt"></i>
+            <span class="num days"></span>
+            <span class="text">DAYS</span>
+          </div>
+          <div class="counter">
+            <i class="fas fa-clock"></i>
+            <span class="num hours"></span>
+            <span class="text">HOURS</span>
+          </div>
+          <div class="counter">
+            <span class="num minutes"></span>
+            <span class="text">MINS</span>
+          </div>
+          <div class="counter">
+            <span class="num seconds"></span>
+            <span class="text">SECS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const countdownDate = new Date("2023-04-15T09:00:00").getTime();
+      const daysElem = document.querySelector(".days");
+      const hoursElem = document.querySelector(".hours");
+      const minutesElem = document.querySelector(".minutes");
+      const secondsElem = document.querySelector(".seconds");
+      setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    daysElem.textContent = days < 10 ? `0${days}` : days;
+    hoursElem.textContent = hours < 10 ? `0${hours}` : hours;
+    minutesElem.textContent = minutes < 10 ? `0${minutes}` : minutes;
+    secondsElem.textContent = seconds < 10 ? `0${seconds}` : seconds;
+  }, 1000);
+</script>
+  </body>
+</html>
